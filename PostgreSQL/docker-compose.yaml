@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: iceberg
+      POSTGRES_PASSWORD: iceberg123
+      POSTGRES_DB: iceberg_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,0 +1,12 @@
+services:
+  spark:
+    image: tabulario/spark-iceberg:latest
+    environment:
+      - SPARK_HOME=/opt/spark
+      - WAREHOUSE_PATH=/warehouse
+    ports:
+      - "8080:8080"  # Spark Master UI
+      - "4040:4040"  # Spark Application UI
+    volumes:
+      - ./warehouse:/warehouse
+      - /Users/vaibhavsrivastava/Documents/projects/apache/scripts:/scripts
